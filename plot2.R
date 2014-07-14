@@ -3,5 +3,5 @@ names(data) <-names(read.table('household_power_consumption.txt', header=TRUE,se
 data$datetime <- strptime(paste(data$Date,data$Time), format = "%d/%m/%Y %H:%M:%S")
 data$Global_active_power <- as.numeric(data$Global_active_power)
 with(data, plot(datetime, Global_active_power, type="l", xlab="", ylab = "Global Active Power (kilowatts)"))
-dev.copy(png, file= "plot2.png")
+dev.copy(png, file= "plot2.png", width = 480, height = 480)
 dev.off()
